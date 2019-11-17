@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "595762824121",
+    "firebase_url": "https://brave-terra-259222.firebaseio.com",
+    "project_id": "brave-terra-259222",
+    "storage_bucket": "brave-terra-259222.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:595762824121:android:c3f0c9d67028bf488d2c68",
+        "android_client_info": {
+          "package_name": "com.reducewastageproduct"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "595762824121-vugpv0ljt0at5rn8egg0ohdtdvtjuf67.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDlJx8xGwMeRUOqm_Jw0wPSndfCKpd8yVE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "595762824121-vugpv0ljt0at5rn8egg0ohdtdvtjuf67.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
