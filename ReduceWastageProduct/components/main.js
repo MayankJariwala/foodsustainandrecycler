@@ -13,12 +13,12 @@ class MenuComponent extends Component {
     render() {
         return (
             <View style={styles.main}>
-                <View style={{flex: 0.15}}>
-                    <Text style={{fontWeight: '900', color: 'green', fontSize: 35}}>Go Green World!</Text>
-                </View>
                 <View style={{flexDirection: 'row'}}>
                     <View style={{
                         alignSelf: 'flex-start',
+                        elevation: 8,
+                        padding: 10,
+                        backgroundColor: 'whitesmoke',
                     }}>
                         <TouchableWithoutFeedback onPress={() => {
                             this.props.navigation.navigate('FoodWastage');
@@ -32,10 +32,14 @@ class MenuComponent extends Component {
                                        alignSelf: 'center',
                                    }}/>
                         </TouchableWithoutFeedback>
+                        <Text style={{fontWeight: 'bold'}}>Foods Wastage Solutions</Text>
                     </View>
                     <Text>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</Text>
                     <View style={{
                         alignSelf: 'flex-end',
+                        elevation: 8,
+                        padding: 10,
+                        backgroundColor: 'whitesmoke',
                     }}>
                         <TouchableWithoutFeedback onPress={() => {
                             this.props.navigation.navigate('Recycle');
@@ -49,7 +53,11 @@ class MenuComponent extends Component {
                                        alignSelf: 'center',
                                    }}/>
                         </TouchableWithoutFeedback>
+                        <Text style={{fontWeight: 'bold'}}>ReCycler Helper</Text>
                     </View>
+                </View>
+                <View style={{margin: '10%', flex: 0.1}}>
+                    <Text style={{fontWeight: '900', color: 'green', fontSize: 35}}>Go Green World!</Text>
                 </View>
             </View>
         );
@@ -63,7 +71,7 @@ const styles = StyleSheet.create({
         flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: 'whitesmoke',
+        backgroundColor: '#f94',
     },
 });
 

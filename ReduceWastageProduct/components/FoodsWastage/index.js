@@ -1,5 +1,14 @@
 import React, {Component} from 'react';
-import {Button, Image, StyleSheet, Text, TextInput, TouchableWithoutFeedback, View} from 'react-native';
+import {
+    Button,
+    Image,
+    StyleSheet,
+    Text,
+    TextInput,
+    TouchableWithoutFeedback,
+    View,
+    DatePickerAndroid,
+} from 'react-native';
 import ImagePicker from 'react-native-image-picker';
 import {uploadProduct} from 'network/upload';
 
@@ -88,13 +97,25 @@ class FoodWastageComponent extends Component {
         }
     };
 
+    openDatePicker = async () => {
+        try {
+            const {action, year, month, day} = await DatePickerAndroid.open({
+                date: new Date(2019, 4, 25),
+            });
+            if (action !== DatePickerAndroid.dismissedAction) {
+                return year + '-' + (month < 9 ? '0' + month : month) + '-' + day;
+            }
+        } catch ({code, message}) {
+            console.warn('Cannot open date picker', message);
+        }
+    };
+
     render() {
-        const {onProcess, boxHidden} = this.state;
         return (
             <View style={styles.outerView}>
                 <View style={styles.topView}>
                     <Text style={{
-                        fontWeight: '900',
+                        fontWeight: 'bold',
                         textTransform: 'uppercase',
                         fontSize: 25,
                     }}>Save Foods Wastage</Text>
@@ -110,6 +131,7 @@ class FoodWastageComponent extends Component {
                             color: 'black',
                             borderColor: 'black',
                             width: '60%',
+                            borderRadius: 10,
                             paddingLeft: '5%',
                         }} placeholder={'Image Filename'}>{this.state.filename}</TextInput>
                         <TouchableWithoutFeedback onPress={() => this.openCamera()}>
@@ -135,21 +157,25 @@ class FoodWastageComponent extends Component {
                     </View>
                     <View style={{marginVertical: 5}}>
                         <Text style={{marginVertical: 10}}> Expiry Date: </Text>
-                        <TextInput
-                            editable={
-                                !onProcess
-                            }
-                            onChangeText={(ref) => {
-                                this.setState({
-                                    expiry_date: ref,
-                                });
-                            }} style={{
+                        <Text style={{
                             backgroundColor: 'whitesmoke',
                             borderWidth: 1,
-                            paddingLeft: '5%',
+                            padding: '5%',
                             borderColor: 'black',
+                            borderRadius: 10,
                             width: '100%',
-                        }} placeholder={'Expiry Date'}/>
+                        }} onPress={() => {
+                            this.openDatePicker().then(value => {
+                                console.log(value);
+                                this.setState({
+                                    expiry_date: value,
+                                });
+                            }).catch(reason => {
+                                console.warn('Date Selection Issue');
+                            });
+                        }}>
+                            Expiry Date
+                        </Text>
                     </View>
                     <View style={{marginVertical: 20}}>
                         <Button title={'Save'} onPress={() => {

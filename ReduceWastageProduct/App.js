@@ -63,7 +63,7 @@ const MainNavigator = createStackNavigator({
     Recycle: {screen: Index},
     FoodWastage: {screen: WastageTabs},
 }, {
-    initialRouteName: 'Menu',
+    initialRouteName: 'FoodWastage',
     headerMode: 'none',
 });
 

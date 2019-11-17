@@ -1,4 +1,4 @@
-const ip_address = 'http://10.192.199.51:5000/';
+const ip_address = 'http://10.192.199.124:5000/';
 export const uploadFileToServer = async (image_uri) => {
     try {
         const data = JSON.stringify({

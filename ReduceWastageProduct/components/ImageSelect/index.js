@@ -96,10 +96,11 @@ class Index extends Component {
             <View style={styles.outerView}>
                 <View style={styles.topView}>
                     <Text style={{
-                        fontWeight: '900',
+                        fontWeight: 'bold',
                         fontSize: 25,
-                        fontStyle: 'italic',
-                    }}>ReCycle Signal</Text>
+                    }}>
+                        ReCycle Signal
+                    </Text>
                 </View>
                 <View style={styles.middleView}>
                     <View style={[styles.imageView, {borderColor: 'black'}]}>
@@ -172,6 +173,7 @@ const styles = StyleSheet.create({
         flex: 0.1,
         alignItems: 'center',
         justifyContent: 'center',
+        backgroundColor: 'whitesmoke',
     },
     middleView: {
         flex: 0.7,
